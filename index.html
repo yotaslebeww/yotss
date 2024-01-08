@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Tanaman Sawit</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Silicon - Multipurpose Technology Bootstrap Template" />
+    <meta name="keywords" content="bootstrap, business, creative agency, mobile app showcase, saas, fintech, finance, online courses, software, medical, conference landing, services, e-commerce, shopping cart, multipurpose, shop, ui kit, marketing, seo, landing, blog, portfolio, html5, css3, javascript, gallery, slider, touch, creative"
+    />
+    <meta name="author" content="Createx Studio" />
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon and Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#6366f1" />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#080032" />
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css" />
+    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css" />
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css" />
+
+    <!-- Page loading styles -->
+    <style>
+        .page-loading {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: all 0.4s 0.2s ease-in-out;
+            transition: all 0.4s 0.2s ease-in-out;
+            background-color: #fff;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 9999;
+        }
+        
+        .dark-mode .page-loading {
+            background-color: #0b0f19;
+        }
+        
+        .page-loading.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .page-loading-inner {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            -webkit-transition: opacity 0.2s ease-in-out;
+            transition: opacity 0.2s ease-in-out;
+            opacity: 0;
+        }
+        
+        .page-loading.active>.page-loading-inner {
+            opacity: 1;
+        }
+        
+        .page-loading-inner>span {
+            display: block;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #9397ad;
+        }
+        
+        .dark-mode .page-loading-inner>span {
+            color: #fff;
+            opacity: 0.6;
+        }
+        
+        .page-spinner {
+            display: inline-block;
+            width: 2.75rem;
+            height: 2.75rem;
+            margin-bottom: 0.75rem;
+            vertical-align: text-bottom;
+            border: 0.15em solid #b4b7c9;
+            border-right-color: transparent;
+            border-radius: 50%;
+            -webkit-animation: spinner 0.75s linear infinite;
+            animation: spinner 0.75s linear infinite;
+        }
+        
+        .dark-mode .page-spinner {
+            border-color: rgba(255, 255, 255, 0.4);
+            border-right-color: transparent;
+        }
+        
+        @-webkit-keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <!-- Theme mode -->
+    <script>
+        let mode = window.localStorage.getItem("mode"),
+            root = document.getElementsByTagName("html")[0];
+        if (mode !== null && mode === "dark") {
+            root.classList.add("dark-mode");
+        } else {
+            root.classList.remove("dark-mode");
+        }
+    </script>
+
+    <!-- Page loading scripts -->
+    <script>
+        (function() {
+            window.onload = function() {
+                const preloader = document.querySelector(".page-loading");
+                preloader.classList.remove("active");
+                setTimeout(function() {
+                    preloader.remove();
+                }, 1000);
+            };
+        })();
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                "gtm.start": new Date().getTime(),
+                event: "gtm.js"
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-WKV3GT5");
+    </script>
+</head>
+
+<!-- Body -->
+
+<body>
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe
+        src="//www.googletagmanager.com/ns.html?id=GTM-WKV3GT5"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+        <div class="page-loading-inner">
+            <div class="page-spinner"></div>
+            <span>Loading...</span>
+        </div>
+    </div>
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+
+
+    <!-- Hero section -->
+    <section class="dark-mode min-vh-100 bg-size-cover bg-repeat-0 bg-position-center position-relative overflow-hidden py-5 mb-5" style="background-image: url(assets/img/landing/product/hero/bg.jpg)">
+        <div class="container pt-lg-3">
+            <div class="row flex-lg-nowrap">
+                <div class="col-lg-7 col-xl-6 col-xxl-5 text-center text-lg-start pt-4 pt-md-5 mt-xxl-4">
+                    <p class="lead pt-5 mt-sm-2 mt-lg-4 mt-xl-5">
+                        Cara Mengenal Lebih Spefisik Benih Sawit Yang Baik
+                    </p>
+                    <h1 class="display-3 pb-md-2 mb-5">Tanaman Sawit</h1>
+                    <div class="mt-n4 ms-lg-n4 ms-n3 pb-sm-3 pb-md-4">
+                        <a href="https://www.youtube.com/results?search_query=Mengenal+apa+itu+Tanaman+sawit" class="btn btn-lg btn-primary mt-lg-4 mt-3 ms-lg-4 ms-3" data-bs-toggle="video">
+                Tonton Video
+                <i class="bx bx-play ms-1 lead"></i>
+              </a>
+
+                    </div>
+                    <div class="swiper-slider mx-auto mt-5 pt-xl-5 pt-lg-2 pt-xl-4" style="max-width: 33rem">
+                        <div class="swiper" data-swiper-options='{
+                "slidesPerView": 1,
+                "effect": "coverflow",
+                "centeredSlides": true,
+                "loop": true,
+                "speed": 650,
+                "coverflowEffect": {
+                  "rotate": 0,
+                  "stretch": 0,
+                  "depth": 560,
+                  "modifier": 1,
+                  "slideShadows": true
+                },
+                "autoplay": {
+                  "delay": 6000,
+                  "disableOnInteraction": false
+                },
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "fraction"
+                },
+                "navigation": {
+                  "prevEl": ".btn-prev",
+                  "nextEl": ".btn-next"
+                }
+              }'>
+
+                            <!-- Prev/Next buttons + count -->
+                            <div class="d-flex justify-content-center align-items-center pb-3 pt-4 mt-3">
+                                <button type="button" class="btn btn-prev btn-icon position-relative top-0 mt-0 ms-0 me-2" style="transform: none">
+                    <i class="bx bx-chevron-left"></i>
+                  </button>
+                                <div class="swiper-pagination text-light opacity-70 fs-sm fw-medium position-relative top-0 w-auto" style="min-width: 70px"></div>
+                                <button type="button" class="btn btn-next btn-icon position-relative top-0 mt-0 ms-2 me-0" style="transform: none">
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured image -->
+                <div class="d-none d-lg-block pt-5 mt-lg-4 mt-xl-5 ms-lg-n5 mx-xl-0">
+                    <img src="https://i.pinimg.com/564x/93/b9/b7/93b9b71ff232693667eb80770034891b.jpg" class="d-block pt-xxl-4 mt-5" width="600" alt="Hero image" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Text + Video -->
+    <section class="mb-5 pt-md-2 pt-lg-4 pt-xl-5">
+        <div class="container mt-4 pt-2">
+            <div class="row row-cols-md-2 row-cols-1 gy-4 mb-5">
+                <div class="col">
+                    <h2 class="h1 mb-0">
+                        Bagaimana Cara Memilih Benih Yang Baik?
+                        <span class="text-primary">Mari Kita Lihat</span>
+                    </h2>
+                </div>
+                <div class="col">
+                    <p class="mb-0 fs-lg">
+                        Kelapa sawit merupakan salah satu tumbuhan industry yang sangat penting. Halk ini karena kelapa sawit memiliki banyak manfaat, salah satunya dapat menghasilkan minya nabati yang banyak dibutuhkan oleh orang banya, Sebagai salah satu komoditi hasil perkebunan
+                        yang mempunyai peran penting dalam kegiatan perekonomian di Indonesia, kelapa sawit juga merupakan salah satu komoditas ekspor Indonesia yang cukup penting sebagai penghasil devisa negara sesudah minyak dan gas.Kelapa sawit juga
+                        sekarang telah menjadi komoditas utama bagi para petani di indonesia oleh sebab pemilihan bibit yang baik dan sesuai ketentuan pabrik harus dilakukan dengan baik supaya menghasilkan kualitas yang baik. pemilihan bibit adalah hal
+                        yang tidak kalah penting karena bibit yang berkualitas akan menghasilkan pohon yang berkualitas pula. Berikut penjelasan bagaimana cara memilih bibit pohon sawit yang berkualitas. Memastikan bentuk benih sesuai dengan standar benih
+                        sawit yang baik Ciri khas benih yang baik untuk ditanam antara lain memiliki biji yang proporsional (tidak terlalu besar dan tidak terlalu kecil), memiliki bentuk bulat atau lonjong, biji tidak terdapat cekungan, calon batang berukuran
+                        pendek serta radikula akar yang panjang, dan yang terakhir memiliki tempurung yang licin dan tidak berserat. Memahami kesehatan fisik dari benih yang akan ditanam Kondisi benih yang baik untuk ditanam yaitu bentuk akar yang tidak
+                        keluar dari polybag, tidak ada tanda-tanda serangga atau hama, tidak berwarna kuning kecoklatan atau daun yang terbelah, dan bagian akar sawit yang masih utuh. Apabila salah satu hal tersebut ditemukan dalam benih sawit, maka akan
+                        sulit menumbuhkan dan mengembalikan kondisi benih menjadi benih yang sehat. Memastikan legalitas benih sawit Benih sawit yang legal berasal dari varietas yang unggul dan pastinya sudah melewati proses seleksi ketat dari pemerintah
+                        sehingga kualitas genetik dan perkecambahan benih terjamin. Sebaliknya, benih ilegal tidak bisa terjamin kualitas, perkecambahan, dan genetiknya sehingga sulit untuk membudidayakan benih tersebut.
+                    </p>
+                </div>
+            </div>
+            <div class="position-relative rounded-3 overflow-hidden">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center zindex-5">
+                    <a href="https://www.youtube.com/watch?v=w9ucPRNUCE8&ab_channel=LINIKINIbyFUTR" class="btn btn-video btn-icon btn-xl stretched-link bg-white" data-bs-toggle="video">
+                        <i class="bx bx-play"></i>
+                    </a>
+                </div>
+                <span class="position-absolute top-0 start-0 w-100 h-100 opacity-40"></span>
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="https://i.pinimg.com/564x/38/4d/4a/384d4a99a6f7d517f530a5dce80b6800.jpg" alt="Cover image" style="max-width: 1000%; height: 1000%;">
+                </div>
+
+    </section>
+
+    <!-- Benefits -->
+    <section class="mb-5 pt-md-2 pt-lg-4 pt-xl-5">
+        <div class="container mt-4 pt-2">
+            <div class="row row-cols-md-2 row-cols-1 gy-4 mb-5">
+                <div class="col">
+                    <h2 class="h1 mb-0">
+                        Bagaimana Cara Memilih Benih Yang Baik?
+                        <span class="text-primary">Buah atau Benih Pisifera</span>
+                    </h2>
+                </div>
+                <div class="col">
+                    <p class="mb-0 fs-lg">
+                        Pisifera adalah salah satu varietas kelapa sawit (Elaeis guineensis) yang memiliki ciri khusus pada jenis kelaminnya. Kelapa sawit memiliki dua jenis kelamin, yaitu kelapa sawit betina (tenera) dan kelapa sawit jantan (dura dan pisifera). Pisifera merupakan
+                        varietas kelapa sawit yang merupakan hasil persilangan antara kelapa sawit betina (tenera) dengan kelapa sawit jantan pisifera. Berikut adalah beberapa karakteristik dan penjelasan terkait dengan buah atau bibit pisifera: Buah
+                        pisifera umumnya memiliki bentuk yang lebih kecil dibandingkan dengan kelapa sawit betina (tenera). Biji: Pisifera memiliki biji (inti) yang relatif lebih kecil dan tidak mengandung endosperm seperti pada kelapa sawit betina. Minyak
+                        Sawit: Kualitas minyak sawit yang dihasilkan oleh pisifera dapat bervariasi tergantung pada faktor genetik dan kondisi lingkungan. Pisifera memiliki kelebihan dalam produksi buah yang lebih tinggi dan tahan terhadap penyakit tertentu
+                        dibandingkan dengan kelapa sawit betina. Oleh karena itu, dalam industri kelapa sawit, pisifera dapat digunakan untuk pengembangan varietas unggul. Keterbatasan: Salah satu keterbatasan pisifera adalah rendahnya kandungan minyak
+                        pada bijinya, karena tidak adanya endosperm. Oleh karena itu, untuk mendapatkan minyak sawit yang cukup banyak, seringkali perlu dilakukan pencampuran dengan kelapa sawit betina. Penggunaan dalam Industri Kelapa Sawit: Perbanyakan:
+                        Bibit pisifera dapat diperbanyak melalui metode okulasi atau metode perbanyakan lainnya untuk tujuan penanaman kelapa sawit. Pengembangan Varietas: Pisifera sering digunakan dalam program pemuliaan tanaman untuk menghasilkan varietas
+                        unggul yang memiliki kombinasi sifat-sifat yang diinginkan, seperti ketahanan terhadap penyakit dan hasil produksi yang tinggi. Dampak Lingkungan dan Sosial: Produksi kelapa sawit, termasuk varietas pisifera, seringkali menjadi
+                        perhatian dalam konteks keberlanjutan dan dampak lingkungan. Perkebunan kelapa sawit dapat berkontribusi pada deforestasi dan degradasi habitat alami. Penting untuk dicatat bahwa industri kelapa sawit telah menjadi subjek perdebatan
+                        terkait dengan dampaknya terhadap lingkungan dan masyarakat. Oleh karena itu, pengelolaan dan produksi kelapa sawit yang berkelanjutan menjadi fokus utama dalam upaya untuk meminimalkan dampak negatifnya.
+                    </p>
+                </div>
+            </div>
+            <span class="position-absolute top-0 start-0 w-100 h-100 opacity-40"></span>
+            <div class="d-flex justify-content-center align-items-center">
+                <img src="https://www.arvis.id/insight/wp-content/uploads/2023/05/Jenis-Kelapa-Sawit-Pisifera.jpg" alt="Cover image" style="width: 100%; height: auto; margin-top: -20px;">
+            </div>
+
+        </div>
+    </section>
+
+    <section class="mb-5 pt-md-2 pt-lg-4 pt-xl-5">
+        <div class="container mt-4 pt-2">
+            <div class="row row-cols-md-2 row-cols-1 gy-4 mb-5">
+                <div class="col">
+                    <h2 class="h1 mb-0">
+                        Bagaimana Cara Memilih Benih Yang Baik?
+                        <span class="text-primary">Buah atau Benih Dura</span>
+                    </h2>
+                </div>
+                <div class="col">
+                    <p class="mb-0 fs-lg">
+                        Bibit dura merujuk pada jenis kelapa sawit (Elaeis guineensis) yang memiliki karakteristik khusus pada jenis kelaminnya. Kelapa sawit memiliki dua jenis kelamin utama, yaitu kelapa sawit betina (tenera) dan kelapa sawit jantan (dura dan pisifera). Bibit
+                        dura merupakan hasil persilangan antara kelapa sawit betina (tenera) dengan kelapa sawit jantan dura. Buah dari kelapa sawit dura memiliki ukuran yang lebih besar dibandingkan dengan buah kelapa sawit betina (tenera). Biji (Inti):
+                        Bibit dura memiliki biji (inti) yang besar dan berisi endosperm. Endosperm adalah jaringan penyimpanan makanan yang berperan dalam pembentukan minyak sawit. Kualitas Minyak Sawit: Bibit dura menghasilkan buah dengan kandungan minyak
+                        yang lebih tinggi dibandingkan dengan pisifera. Ini karena biji dura memiliki endosperm yang kaya akan minyak, sehingga memberikan hasil produksi minyak yang lebih baik. Keunggulan dan Penggunaan: Dura banyak digunakan dalam industri
+                        kelapa sawit karena kemampuannya menghasilkan buah dengan biji yang besar dan berisi endosperm yang kaya akan minyak, yang merupakan bahan baku utama untuk produksi minyak sawit. Ketahanan: Dura cenderung lebih tahan terhadap serangan
+                        penyakit tertentu dibandingkan dengan kelapa sawit pisifera. Pemuliaan Tanaman: Bibit dura sering digunakan dalam program pemuliaan tanaman kelapa sawit untuk mengembangkan varietas yang menggabungkan sifat-sifat unggul, seperti
+                        tingkat produksi yang tinggi dan ketahanan terhadap penyakit. Pentingnya Pengelolaan Berkelanjutan: Seperti halnya dengan kelapa sawit pada umumnya, pengelolaan berkelanjutan menjadi sangat penting dalam produksi kelapa sawit dari
+                        bibit dura. Hal ini melibatkan praktik-praktik pertanian yang meminimalkan dampak negatif terhadap lingkungan dan masyarakat. Penting untuk dicatat bahwa industri kelapa sawit telah menjadi perhatian utama dalam konteks keberlanjutan
+                        dan lingkungan. Oleh karena itu, banyak upaya dilakukan untuk memastikan bahwa produksi kelapa sawit, termasuk dari bibit dura, dilakukan dengan memperhatikan prinsip-prinsip keberlanjutan. Bibit tenera adalah salah satu jenis
+                        bibit kelapa sawit (Elaeis guineensis) yang memiliki peran penting dalam industri kelapa sawit. Bibit tenera merupakan hasil persilangan antara kelapa sawit betina (tenera) dan kelapa sawit jantan dura. Persilangan ini dilakukan
+                        dengan tujuan untuk menggabungkan sifat-sifat unggul dari kedua varietas tersebut, sehingga menghasilkan bibit yang menghasilkan buah dengan kualitas minyak sawit yang baik.
+
+
+
+                </div>
+            </div>
+            <span class="position-absolute top-0 start-0 w-100 h-100 opacity-40"></span>
+            <img src="https://4.bp.blogspot.com/-s_15x8EBLMU/WalikgOc7SI/AAAAAAAAAAo/cimjohW5iKsiFd9K024BmX46GFaJfFbJgCLcBGAs/s1600/Dura.jpg" alt="Cover image" style="width: 20%; height: auto; margin-top: -20px;">
+        </div>
+        </div>
+    </section>
+
+    <section class="mb-5 pt-md-2 pt-lg-4 pt-xl-5">
+        <div class="container mt-4 pt-2">
+            <div class="row row-cols-md-2 row-cols-1 gy-4 mb-5">
+                <div class="col">
+                    <h2 class="h1 mb-0">
+                        Bagaimana Cara Memilih Benih Yang Baik?
+                        <span class="text-primary">Buah atau Benih Tenera</span>
+                    </h2>
+                </div>
+                <div class="col">
+                    <p class="mb-0 fs-lg">
+                        Buah dari kelapa sawit tenera memiliki ukuran sedang, antara buah kelapa sawit dura yang besar dan buah kelapa sawit pisifera yang kecil. Biji (Inti): Bibit tenera menghasilkan biji yang berisi endosperm yang merupakan sumber utama minyak sawit. Kualitas
+                        Minyak Sawit: Bibit tenera dianggap memiliki kualitas minyak sawit yang baik. Kandungan minyak pada biji dari bibit tenera berada di antara kandungan minyak dura dan pisifera. Keunggulan dan Penggunaan: Bibit tenera memiliki keunggulan
+                        karena menggabungkan sifat-sifat unggul dari kedua jenis kelamin, yaitu betina (tenera) dan jantan (dura). Produksi Minyak: Bibit tenera banyak digunakan dalam industri kelapa sawit karena mampu memberikan hasil produksi minyak
+                        yang baik dan seimbang. Peran dalam Pemuliaan: Bibit tenera sering menjadi fokus dalam program pemuliaan tanaman kelapa sawit untuk mengembangkan varietas unggul yang dapat memberikan hasil produksi minyak yang optimal. Konteks
+                        Keberlanjutan: Seperti halnya dengan kelapa sawit pada umumnya, pengelolaan berkelanjutan menjadi penting dalam produksi kelapa sawit dari bibit tenera. Praktik-praktik pertanian berkelanjutan diperlukan untuk meminimalkan dampak
+                        negatif terhadap lingkungan dan masyarakat. Penting untuk dicatat bahwa industri kelapa sawit telah menjadi fokus perhatian dalam konteks keberlanjutan dan lingkungan. Oleh karena itu, upaya-upaya terus dilakukan untuk meningkatkan
+                        praktik-praktik pertanian yang berkelanjutan dan memastikan bahwa produksi kelapa sawit dapat berkontribusi secara positif terhadap berbagai aspek, termasuk lingkungan dan kesejahteraan masyarakat.
+
+
+
+                </div>
+            </div>
+            <span class="position-absolute top-0 start-0 w-100 h-100 opacity-40"></span>
+            <img src="https://1.bp.blogspot.com/-SSnSq4MLxGM/XNcRYGWQqnI/AAAAAAABSlk/vrJipMQ-IdonV61EUxzkFQq7YieJ2ImrACLcBGAs/s320/kelapa-sawit-tenera.jpg" alt="Cover image" />
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="koreksi" class="py-7 py-md-9 bg-black">
+        <div class="container px-4">
+            <div class="row">
+                <!-- Formulir -->
+                <div class="col-md-6">
+                    <div class="col-12 col-md-4">
+                        <b class="sapa-text">Penilaian Dosen</b>
+                        <hr style="border: 1px dotted var(--ShennColor)" />
+                        <p></p>
+                        <div class="text-center">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="checkDosen" />
+                                <label class="form-check-label" for="checkDosen">
+                    Penilaian Disini</label
+                  >
+                </div>
+              </div>
+
+              <!-- Bootstrap Modal -->
+              <div
+                class="modal fade"
+                id="popupModal"
+                tabindex="-1"
+                aria-labelledby="popupModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="popupModalLabel">Form</h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="emailForm">
+                        <div class="mb-3">
+                          <label for="email" class="form-label text-dark"
+                            >Email Tujuan:</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            required
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label for="password" class="form-labelz text-dark"
+                            >Password "sudah_dicek_dosen":</label
+                          >
+                          <input
+                            type="password"
+                            class="form-control"
+                            id="password"
+                            name="password"
+                            required
+                          />
+                        </div>
+                        <button
+                          type="button"
+                          class="btn btn-primary"
+                          onclick="submitForm()"
+                        >
+                          Submit
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <style>
+                body {
+                  font-family: Arial, sans-serif;
+                  margin: 20px;
+                }
+
+                .popup {
+                  display: none;
+                  /* ... (tidak berubah) */
+                }
+              </style>
+            </div>
+          </div>
+
+          <!-- Informasi Kontak -->
+          <div class="col-md-6">
+            <div class="row gx-7">
+              <div class="col-sm-4">
+                <h5 class="text-xs text-primary">About Us</h5>
+                <p class="mb-6">
+                  Memberi wawansan yang belum tentu anda dapatkan dan anda
+                  lihat.
+                </p>
+              </div>
+              <div class="col-sm-4">
+                <h5 class="text-xs text-primary">Contact info</h5>
+                <ul class="list-unstyled mb-6">
+                  <li class="d-flex mb-2">
+                    <div class="fas fa-map-marker-alt me-3 mt-2 fs-sm"></div>
+                    Pontianak, Kalimantan Barat Indonesia
+                  </li>
+                  <li class="d-flex">
+                    <div class="far fa-envelope me-3 mt-2 fs-sm"></div>
+                    <a href="mailto:admin@domain.com">yota.pratama77@gmail.com</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-sm-4"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <!-- Copyright -->
+            <div class="d-flex align-items-center">
+              <hr class="hr-sm me-3" style="height: 1px" />
+              &copy; yota,pontianak Indonesian
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="/js.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+      <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+
+    <!-- Vendor Scripts -->
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main Theme Script -->
+    <script src="assets/js/theme.min.js"></script>
+    <script src="helo.js"></script>
+  </body>
+</html>
